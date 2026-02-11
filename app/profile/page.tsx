@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ProfilePage() {
   return (
     <main className="text-black">
@@ -6,8 +8,15 @@ export default function ProfilePage() {
 
       <div className="mt-6 max-w-2xl rounded-2xl border border-[var(--border)] bg-white p-6 shadow-sm">
         <div className="flex items-center gap-4">
-          <div className="h-14 w-14 rounded-full bg-[var(--blue-100)] border border-[var(--border)] flex items-center justify-center font-extrabold text-xl">
-            S
+          {/* User image */}
+          <div className="relative h-16 w-16 overflow-hidden rounded-full border border-[var(--border)] bg-[var(--blue-100)]">
+            <Image
+              src="/user.png"
+              alt="User photo"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
 
           <div>
@@ -29,16 +38,6 @@ export default function ProfilePage() {
                 Active
               </span>
             </div>
-          </div>
-
-          <div className="rounded-xl bg-white border border-[var(--border)] p-4">
-            <div className="text-xs font-bold text-black/60 uppercase">Email</div>
-            <div className="mt-1 font-bold">shalikalakshani@example.com</div>
-          </div>
-
-          <div className="rounded-xl bg-white border border-[var(--border)] p-4">
-            <div className="text-xs font-bold text-black/60 uppercase">University</div>
-            <div className="mt-1 font-bold">SLIIT</div>
           </div>
         </div>
       </div>

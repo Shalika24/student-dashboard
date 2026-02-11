@@ -22,7 +22,7 @@ export default function CoursesPage() {
   return (
     <main className="text-black">
       <h1 className="text-3xl font-extrabold">Courses</h1>
-      <p className="mt-1 text-sm text-black/70">Course list shown as cards.</p>
+      <p className="mt-1 text-sm text-black/70">Take a Look at Courses.</p>
 
       <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {courses.map((c) => (

@@ -7,16 +7,16 @@ type Student = {
 };
 
 const students: Student[] = [
-  { id: "S001", name: "Nimal Perera", email: "nimal@gmail.com", course: "Web Development", status: "Active" },
-  { id: "S002", name: "Kamal Silva", email: "kamal@gmail.com", course: "Database Systems", status: "Active" },
-  { id: "S003", name: "Sahan Fernando", email: "sahan@gmail.com", course: "UI/UX Basics", status: "Inactive" },
+  { id: "S001", name: "Ishan Eranda", email: "ishan@gmail.com", course: "Web Development", status: "Active" },
+  { id: "S002", name: "Nethmini Vihara", email: "nethu@gmail.com", course: "Database Systems", status: "Active" },
+  { id: "S003", name: "Shalika Lakshani", email: "shalika@gmail.com", course: "Frontend Development", status: "Inactive" },
 ];
 
 export default function StudentsPage() {
   return (
     <main className="text-black">
       <h1 className="text-3xl font-extrabold">Students</h1>
-      <p className="mt-1 text-sm text-black/70">Student list shown as a table.</p>
+      <p className="mt-1 text-sm text-black/70">View The Student list Here .</p>
 
       <div className="mt-6 overflow-x-auto rounded-2xl border border-[var(--border)] bg-white shadow-sm">
         <table className="w-full text-left text-sm">

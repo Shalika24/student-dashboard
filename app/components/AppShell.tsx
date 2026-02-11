@@ -6,18 +6,25 @@ import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false); // mobile drawer
+  const [collapsed, setCollapsed] = useState(false); // desktop collapse
 
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--bg)]">
-      <Navbar onToggleSidebar={() => setSidebarOpen((v) => !v)} />
+    <div className="min-h-screen flex flex-col">
+      <Navbar
+        onToggleSidebar={() => setSidebarOpen((v) => !v)}
+        onToggleCollapse={() => setCollapsed((v) => !v)}
+        collapsed={collapsed}
+      />
 
       <div className="flex flex-1">
-        <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+        <Sidebar
+          open={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
+          collapsed={collapsed}
+        />
 
-        <main className="flex-1 px-4 py-6 sm:px-6 lg:px-10">
-          <div className="mx-auto w-full max-w-6xl">{children}</div>
-        </main>
+        <main className="flex-1 p-6">{children}</main>
       </div>
 
       <Footer />
