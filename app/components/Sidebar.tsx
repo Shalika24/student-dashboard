@@ -13,10 +13,10 @@ export default function Sidebar({
   const pathname = usePathname();
 
   const linkClass = (path: string) =>
-    `block rounded px-3 py-2 ${
+    `block rounded-lg px-4 py-3 text-lg font-bold transition ${
       pathname === path
-        ? "bg-blue-100 text-blue-700 font-medium"
-        : "hover:bg-gray-100"
+        ? "bg-white text-[#2A514C]"
+        : "text-[#2A514C] hover:bg-white/40"
     }`;
 
   return (
@@ -24,36 +24,43 @@ export default function Sidebar({
       {/* Mobile overlay */}
       {open && (
         <div
-          className="fixed inset-0 bg-black/40 md:hidden"
+          className="fixed inset-0 bg-black/40 md:hidden z-40"
           onClick={onClose}
         />
       )}
 
-      <aside
-        className={[
-          "fixed md:static top-0 left-0 h-full md:h-auto w-64 border-r bg-white p-4",
-          "transition-transform md:translate-x-0",
-          open ? "translate-x-0" : "-translate-x-full",
-        ].join(" ")}
-      >
-        <div className="flex items-center justify-between md:hidden mb-4">
-          <div className="font-semibold">Menu</div>
-          <button className="text-sm" onClick={onClose}>
-            ✕
-          </button>
+      {/* Sidebar */}
+      <aside className="fixed md:static top-0 left-0 z-50 h-full md:h-auto w-64 bg-[#CA8661] p-5 rounded-tr-2xl rounded-br-2xl">
+        <div className="mb-5 text-sm uppercase tracking-wider font-extrabold text-[#2A514C]/90">
+          Navigation
         </div>
 
-        <nav className="space-y-2">
-          <Link href="/" className={linkClass("/")}>
+        <nav className="space-y-3">
+          <Link href="/" className={linkClass("/")} onClick={onClose}>
             Home
           </Link>
-          <Link href="/courses" className={linkClass("/courses")}>
+
+          <Link
+            href="/courses"
+            className={linkClass("/courses")}
+            onClick={onClose}
+          >
             Courses
           </Link>
-          <Link href="/students" className={linkClass("/students")}>
+
+          <Link
+            href="/students"
+            className={linkClass("/students")}
+            onClick={onClose}
+          >
             Students
           </Link>
-          <Link href="/profile" className={linkClass("/profile")}>
+
+          <Link
+            href="/profile"
+            className={linkClass("/profile")}
+            onClick={onClose}
+          >
             Profile
           </Link>
         </nav>
