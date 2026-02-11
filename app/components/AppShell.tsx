@@ -9,20 +9,18 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-brand-sand/10 text-brand-dark">
-      <div className="min-h-screen flex flex-col">
-        <Navbar onToggleSidebar={() => setSidebarOpen((v) => !v)} />
+    <div className="min-h-screen flex flex-col bg-[var(--bg)]">
+      <Navbar onToggleSidebar={() => setSidebarOpen((v) => !v)} />
 
-        <div className="flex flex-1">
-          <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <div className="flex flex-1">
+        <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-          <main className="flex-1 p-4 sm:p-6">
-            <div className="mx-auto w-full max-w-5xl">{children}</div>
-          </main>
-        </div>
-
-        <Footer />
+        <main className="flex-1 px-4 py-6 sm:px-6 lg:px-10">
+          <div className="mx-auto w-full max-w-6xl">{children}</div>
+        </main>
       </div>
+
+      <Footer />
     </div>
   );
 }

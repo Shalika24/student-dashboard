@@ -7,68 +7,43 @@ type Student = {
 };
 
 const students: Student[] = [
-  {
-    id: "S001",
-    name: "Nimal Perera",
-    email: "nimal@gmail.com",
-    course: "Web Development",
-    status: "Active",
-  },
-  {
-    id: "S002",
-    name: "Kamal Silva",
-    email: "kamal@gmail.com",
-    course: "Database Systems",
-    status: "Active",
-  },
-  {
-    id: "S003",
-    name: "Sahan Fernando",
-    email: "sahan@gmail.com",
-    course: "UI/UX Basics",
-    status: "Inactive",
-  },
+  { id: "S001", name: "Nimal Perera", email: "nimal@gmail.com", course: "Web Development", status: "Active" },
+  { id: "S002", name: "Kamal Silva", email: "kamal@gmail.com", course: "Database Systems", status: "Active" },
+  { id: "S003", name: "Sahan Fernando", email: "sahan@gmail.com", course: "UI/UX Basics", status: "Inactive" },
 ];
 
 export default function StudentsPage() {
   return (
-    <main>
-      <h1 className="text-2xl font-bold text-[#2A514C]">Students</h1>
-      <p className="mt-2 text-sm text-[#2A514C]/80">
-        Student list shown as a table.
-      </p>
+    <main className="text-black">
+      <h1 className="text-3xl font-extrabold">Students</h1>
+      <p className="mt-1 text-sm text-black/70">Student list shown as a table.</p>
 
-      <div className="mt-6 overflow-x-auto rounded-2xl border-2 border-[#B67452] bg-[#B67452]/30 shadow-sm">
-        <table className="w-full text-left text-sm text-[#2A514C]">
-          {/* HEADER */}
-          <thead className="bg-[#B67452]/40 font-bold">
-            <tr>
-              <th className="p-3">ID</th>
-              <th className="p-3">Name</th>
-              <th className="p-3">Email</th>
-              <th className="p-3">Course</th>
-              <th className="p-3">Status</th>
+      <div className="mt-6 overflow-x-auto rounded-2xl border border-[var(--border)] bg-white shadow-sm">
+        <table className="w-full text-left text-sm">
+          <thead className="bg-[var(--blue-100)]">
+            <tr className="text-black">
+              <th className="p-4">ID</th>
+              <th className="p-4">Name</th>
+              <th className="p-4">Email</th>
+              <th className="p-4">Course</th>
+              <th className="p-4">Status</th>
             </tr>
           </thead>
 
-          {/* BODY */}
-          <tbody className="divide-y divide-[#2A514C]/30">
+          <tbody className="divide-y divide-[var(--border)]">
             {students.map((s) => (
-              <tr
-                key={s.id}
-                className="hover:bg-white/40 transition"
-              >
-                <td className="p-3 font-semibold">{s.id}</td>
-                <td className="p-3 font-semibold">{s.name}</td>
-                <td className="p-3">{s.email}</td>
-                <td className="p-3">{s.course}</td>
-                <td className="p-3">
+              <tr key={s.id} className="hover:bg-[var(--blue-100)]/40 transition">
+                <td className="p-4 font-bold">{s.id}</td>
+                <td className="p-4 font-bold">{s.name}</td>
+                <td className="p-4">{s.email}</td>
+                <td className="p-4">{s.course}</td>
+                <td className="p-4">
                   <span
                     className={
-                      "rounded-full px-3 py-1 text-xs font-bold " +
+                      "rounded-full px-3 py-1 text-xs font-extrabold " +
                       (s.status === "Active"
-                        ? "bg-[#B6F7C1] text-[#1F6B3F]"
-                        : "bg-[#F8B4B4] text-[#7A1F1F]")
+                        ? "bg-green-200 text-green-900"
+                        : "bg-red-200 text-red-900")
                     }
                   >
                     {s.status}

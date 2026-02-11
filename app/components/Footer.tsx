@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="h-12 bg-[#2A514C] px-4 flex items-center justify-center text-sm font-medium text-white">
+    <footer className="bg-[var(--blue-900)] text-white text-sm py-4 text-center">
       © {new Date().getFullYear()} Student Course Management Dashboard
     </footer>
   );

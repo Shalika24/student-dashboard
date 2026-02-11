@@ -1,13 +1,19 @@
 @import "tailwindcss";
 
-
+/* Global theme */
 :root {
-  --background: #ffffff;
-  --foreground: #2A514C; 
+  --bg: #f6f8fc;
+  --text: #000000;
+
+  --blue-900: #1e3a8a; /* navbar/footer */
+  --blue-600: #2563eb; /* primary */
+  --blue-200: #bfdbfe; /* soft accents */
+  --blue-100: #dbeafe; /* panels */
+  --border: #93c5fd;   /* borders */
 }
 
 body {
-  background: transparent; 
-  color: var(--foreground);
+  background: var(--bg);
+  color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
 }

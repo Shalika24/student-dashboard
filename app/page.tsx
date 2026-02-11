@@ -1,93 +1,74 @@
-export default function Home() {
+export default function HomePage() {
   return (
-    <main>
-      {/* PAGE TITLE */}
-      <h1 className="text-2xl font-bold text-brand-dark">
-        Dashboard Overview
-      </h1>
-      <p className="mt-1 text-sm text-brand-dark/70">
-        Welcome back! Here's what's happening today.
-      </p>
+    <main className="text-black">
+      <div className="mb-6">
+        <h1 className="text-3xl font-extrabold">Dashboard Overview</h1>
+        <p className="mt-1 text-sm text-black/70">
+          Welcome back! Here’s what’s happening today.
+        </p>
+      </div>
 
-      {/* STATS */}
-      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {/* Stat cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
-          { label: "Total Courses", value: 12 },
-          { label: "Active Students", value: 245 },
-          { label: "Instructors", value: 18 },
-          { label: "Upcoming Classes", value: 5 },
-        ].map((card) => (
+          { label: "Total Courses", value: "12" },
+          { label: "Active Students", value: "245" },
+          { label: "Instructors", value: "18" },
+          { label: "Upcoming Classes", value: "5" },
+        ].map((s) => (
           <div
-            key={card.label}
-            className="rounded-2xl border border-brand-light/40 bg-white p-5 shadow-sm"
+            key={s.label}
+            className="rounded-2xl border border-[var(--border)] bg-white p-5 shadow-sm"
           >
-            <div className="text-sm text-brand-dark/70">
-              {card.label}
-            </div>
-            <div className="mt-1 text-3xl font-bold text-brand-dark">
-              {card.value}
-            </div>
+            <div className="text-sm text-black/70">{s.label}</div>
+            <div className="mt-2 text-3xl font-extrabold">{s.value}</div>
           </div>
         ))}
       </div>
 
-      {/* QUICK ACTIONS */}
-      <section className="mt-10">
-        <h2 className="text-lg font-semibold text-brand-dark">
-          Quick Actions
-        </h2>
-
-        <div className="mt-3 flex gap-3">
-          <button className="rounded-lg border border-brand-dark px-4 py-2 text-sm font-medium text-brand-dark hover:bg-brand-light/10">
-            Add Course
-          </button>
-
-          <button className="rounded-lg border border-brand-dark px-4 py-2 text-sm font-medium text-brand-dark hover:bg-brand-light/10">
-            Add Student
-          </button>
-
-          <button className="rounded-lg border border-brand-dark px-4 py-2 text-sm font-medium text-brand-dark hover:bg-brand-light/10">
-            View Reports
-          </button>
-        </div>
-      </section>
-
-      {/* LOWER GRID */}
-      <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-        {/* ACTIVITY */}
-        <div className="rounded-2xl border border-brand-light/40 bg-white p-5">
-          <h3 className="font-semibold text-brand-dark">
-            Recent Activity
-          </h3>
-
-          <ul className="mt-3 space-y-2 text-sm text-brand-dark">
-            <li className="flex justify-between">
-              <span>New student registered</span>
-              <span className="text-brand-dark/60">2 mins ago</span>
-            </li>
-
-            <li className="flex justify-between">
-              <span>Course updated: Web Dev</span>
-              <span className="text-brand-dark/60">1 hour ago</span>
-            </li>
-
-            <li className="flex justify-between">
-              <span>UI/UX course completed</span>
-              <span className="text-brand-dark/60">Yesterday</span>
-            </li>
-          </ul>
+      {/* Actions + panels */}
+      <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <div className="lg:col-span-1 rounded-2xl border border-[var(--border)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-bold">Quick Actions</h2>
+          <div className="mt-4 flex flex-col gap-3">
+            <button className="rounded-xl bg-[var(--blue-600)] text-white py-3 font-bold hover:opacity-95">
+              Add Course
+            </button>
+            <button className="rounded-xl bg-[var(--blue-100)] text-black py-3 font-bold border border-[var(--border)] hover:bg-[var(--blue-200)]">
+              Add Student
+            </button>
+            <button className="rounded-xl bg-white text-black py-3 font-bold border border-[var(--border)] hover:bg-[var(--blue-100)]">
+              View Reports
+            </button>
+          </div>
         </div>
 
-        {/* ANNOUNCEMENTS */}
-        <div className="rounded-2xl border border-brand-light/40 bg-white p-5">
-          <h3 className="font-semibold text-brand-dark">
-            Announcements
-          </h3>
+        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="rounded-2xl border border-[var(--border)] bg-white p-5 shadow-sm">
+            <h2 className="text-lg font-bold">Recent Activity</h2>
+            <ul className="mt-4 space-y-3 text-sm text-black/80">
+              <li className="flex justify-between">
+                <span>New student registered</span>
+                <span className="text-black/60">2 mins ago</span>
+              </li>
+              <li className="flex justify-between">
+                <span>Course updated: Web Dev</span>
+                <span className="text-black/60">1 hour ago</span>
+              </li>
+              <li className="flex justify-between">
+                <span>UI/UX course completed</span>
+                <span className="text-black/60">Yesterday</span>
+              </li>
+            </ul>
+          </div>
 
-          <p className="mt-3 text-sm text-brand-dark">
-            🎓 Semester exams start next week. Please ensure all records
-            are updated before Friday.
-          </p>
+          <div className="rounded-2xl border border-[var(--border)] bg-white p-5 shadow-sm">
+            <h2 className="text-lg font-bold">Announcements</h2>
+            <div className="mt-4 rounded-xl bg-[var(--blue-100)] p-4 border border-[var(--border)] text-sm">
+              📣 Semester exams start next week. Please ensure all records are
+              updated before Friday.
+            </div>
+          </div>
         </div>
       </div>
     </main>
