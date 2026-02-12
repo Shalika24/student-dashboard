@@ -52,8 +52,10 @@ export default function Sidebar({
         className={[
           "fixed md:static top-0 left-0 z-40 h-screen",
           collapsed ? "w-20" : "w-64",
+          // Mobile slide animation
+          open ? "translate-x-0" : "-translate-x-full md:translate-x-0",
           "transition-all duration-300",
-          "bg-gradient-to-b from-[#1e3a8a] via-[#4f6fb3] to-white",
+          "bg-gradient-to-b from-[var(--blue-900)] via-[#4f6fb3] to-white",
           "pt-4 px-3",
         ].join(" ")}
       >
@@ -125,7 +127,7 @@ export default function Sidebar({
                   <span
                     className="
                       pointer-events-none absolute left-full ml-3
-                      rounded-md bg-[#1e3a8a]
+                      rounded-md bg-[var(--blue-900)]
                       px-3 py-2 text-xs font-semibold text-white
                       opacity-0 translate-x-1
                       group-hover:opacity-100 group-hover:translate-x-0

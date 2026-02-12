@@ -13,7 +13,7 @@ export default function Navbar({
   collapsed: boolean;
 }) {
   return (
-    <header className="h-14 bg-[#1e3a8a] text-white px-4 flex items-center justify-between">
+    <header className="h-14 bg-[var(--blue-900)] text-white px-4 flex items-center justify-between">
       <div className="flex items-center gap-3">
         {/* Mobile menu */}
         <button

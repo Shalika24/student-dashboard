@@ -1,10 +1,12 @@
+import Link from "next/link";
+
 export default function HomePage() {
   return (
     <main className="text-black">
       <div className="mb-6">
         <h1 className="text-3xl font-extrabold">Dashboard Overview</h1>
         <p className="mt-1 text-sm text-black/70">
-          Welcome back! Here’s what’s happening today.
+          Welcome back! Here's what's happening today.
         </p>
       </div>
 
@@ -31,12 +33,16 @@ export default function HomePage() {
         <div className="lg:col-span-1 rounded-2xl border border-[var(--border)] bg-white p-5 shadow-sm">
           <h2 className="text-lg font-bold">Quick Actions</h2>
           <div className="mt-4 flex flex-col gap-3">
-            <button className="rounded-xl bg-[var(--blue-600)] text-white py-3 font-bold hover:opacity-95">
-              Add Course
-            </button>
-            <button className="rounded-xl bg-[var(--blue-100)] text-black py-3 font-bold border border-[var(--border)] hover:bg-[var(--blue-200)]">
-              Add Student
-            </button>
+            <Link href="/courses">
+              <button className="w-full rounded-xl bg-[var(--blue-600)] text-white py-3 font-bold hover:opacity-95">
+                Add Course
+              </button>
+            </Link>
+            <Link href="/students">
+              <button className="w-full rounded-xl bg-[var(--blue-100)] text-black py-3 font-bold border border-[var(--border)] hover:bg-[var(--blue-200)]">
+                Add Student
+              </button>
+            </Link>
             <button className="rounded-xl bg-white text-black py-3 font-bold border border-[var(--border)] hover:bg-[var(--blue-100)]">
               View Reports
             </button>
