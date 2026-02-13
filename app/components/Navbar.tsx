@@ -39,7 +39,7 @@ export default function Navbar({
         </button>
 
         <Link href="/" className="font-semibold tracking-wide">
-          Student Dashboard
+          Dashboard
         </Link>
       </div>
 
